@@ -1,0 +1,33 @@
+<!--springMVC-->
+###web.xml设置
+--添加springMVC配置
+<servlet>
+      <servlet-name>servlerName</servlet-name>
+      <servlet-class>
+         org.springframework.web.servlet.DispatcherServlet
+      </servlet-class>
+      <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+  <servlet-name>servlerName</servlet-name>
+  <url-pattern>/</url-pattern>
+</servlet-mapping>
+--修改spring配置文件参数
+<context-param>
+   <param-name>contextConfigLocation</param-name>
+   <param-value>/WEB-INF/HelloWeb-servlet.xml</param-value>
+</context-param>
+<listener>
+   <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+   </listener-class>
+</listener>
+
+###servlerName-servlet.xml设置
+--添加注释扫描
+<context:component-scan base-package="package-url" />
+标签将用于激活 Spring MVC 注释扫描功能，该功能允许使用注释，如 @Controller 和 @RequestMapping 等等。
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/WEB-INF/jsp/" />
+      <property name="suffix" value=".jsp" />
+</bean>
