@@ -1,40 +1,42 @@
+===========
+file
+===========
 echo ''>file //写入文件
 cat file //查看文件
 paw //查看目录
 touch file//创建文件
 ls [-a|-s]//查看所有文件|显示信息
 mkdir {file}//创建文件夹
-
 ============
 init
 ============
 $ git config --global user.name 'runoob'
 $ git config --global user.email test@runoob.com
 $git init //初始化
+============
+operation
+============
 $git add[.] //添加文件[添加目录下的所有文件]
-
 $git commit [-m|-am] //提交[提交|添加并提交]
-
-$git clone {url/path}//克隆
-
 $git status [-s] //查看文件状态[简约显示]
-
 $git diff [--cached|HEAD|--stat] //
 尚未缓存的改动：git diff
 查看已缓存的改动： git diff --cached
 查看已缓存的与未缓存的所有改动：git diff HEAD
 显示摘要而非整个 diff：git diff --stat
-
 $git reset HEAD -- file //取消缓存
 $git rm [--cached] {file}//从缓存和工作区删除[只从缓存删除]
 $git mv {file}//移动和重命名
-
 $git log [--oneline|--graph|--reverse|--decorate|--author={name}|--before{}|--after{}]
 $git tag -a {tagName} -m {describe} [version]
 $git tag -s {tagName} -m {describe} [version]
-
 $git reset --hard {version}
 $git reflog
+============
+remote
+============
+$ ssh-keygen -t rsa -C "903458283@qq.com" //生成SSH KEY,将公匙添加到github中
+$ git remote add origin git@github.com:voidWater/note.git//将本地repository与github关联
+$ git push -u origin master//第一次推送master分支的所有内容
+$ git push origin master //
 
-
-$ ssh-keygen -t rsa -C "youremail@example.com"
