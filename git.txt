@@ -4,6 +4,10 @@ paw //查看目录
 touch file//创建文件
 ls [-a|-s]//查看所有文件|显示信息
 mkdir {file}//创建文件夹
+
+============
+init
+============
 $ git config --global user.name 'runoob'
 $ git config --global user.email test@runoob.com
 $git init //初始化
