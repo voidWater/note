@@ -1,20 +1,25 @@
-echo ''>file //写入文件
-cat file //查看文件
-paw //查看目录
+=====================
+file
+=====================
+echo '内容'>file //写入文件
+cat file //查看文件内容
+pwd //查看当前目录
 touch file//创建文件
 ls [-a|-s]//查看所有文件|显示信息
 mkdir {file}//创建文件夹
+=====================
+init
+=====================
 $ git config --global user.name 'runoob'
 $ git config --global user.email test@runoob.com
 $git init //初始化
+=====================
+operation
+=====================
 $git add[.] //添加文件[添加目录下的所有文件]
-
 $git commit [-m|-am] //提交[提交|添加并提交]
-
 $git clone {url/path}//克隆
-
 $git status [-s] //查看文件状态[简约显示]
-
 $git diff [--cached|HEAD|--stat] //
 尚未缓存的改动：git diff
 查看已缓存的改动： git diff --cached
@@ -31,14 +36,10 @@ $git tag -s {tagName} -m {describe} [version]
 
 $git reset --hard {version}
 $git reflog
-
-
-$ ssh-keygen -t rsa -C "youremail@example.com"
-
 =====================
 branch
 =====================
-$git branch [-b|-d|--no-ff -m {describe}] {branchName}//创建分支[切换到新分支|删除分支|禁用fast forward]{分支名}
+$git branch [-b|-d|-D|--no-ff -m {describe}] {branchName}//创建分支[切换到新分支|删除分支|强制删除|禁用fast forward]{分支名}
 $git checkout {branchName}//切换分支
 $git merge {branchName}//合并分支
 //conflict:可以用git status命令查看
@@ -49,3 +50,10 @@ $git stash //保存当前环境
 $git stash list//查看stashId
 $git stash apply[stashId]//恢复环境
 $git stash pop[stash]//恢复环境并删除
+============
+remote
+============
+$ ssh-keygen -t rsa -C "903458283@qq.com" //生成SSH KEY,将公匙添加到github中
+$ git remote add origin git@github.com:voidWater/note.git//将本地repository与github关联
+$ git push -u origin master//第一次推送master分支的所有内容
+$ git push origin master //
