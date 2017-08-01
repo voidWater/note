@@ -53,7 +53,10 @@ $git stash pop[stash]//恢复环境并删除
 ============
 remote
 ============
+$git remote [-v]//查看远程repository[详细信息]
+
 $ ssh-keygen -t rsa -C "903458283@qq.com" //生成SSH KEY,将公匙添加到github中
 $ git remote add origin git@github.com:voidWater/note.git//将本地repository与github关联
+
 $ git push -u origin master//第一次推送master分支的所有内容
-$ git push origin master //
+$ git push {origin} {master} //推送{远程repository}{推送的分支}
