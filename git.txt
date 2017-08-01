@@ -42,3 +42,10 @@ $git branch [-b|-d|--no--ff--m {describe}] {branchName}//´´½¨·ÖÖ§[ÇĞ»»µ½ĞÂ·ÖÖ§|É
 $git checkout {branchName}//ÇĞ»»·ÖÖ§
 $git merge {branchName}//ºÏ²¢·ÖÖ§
 //conflict:¿ÉÒÔÓÃgit statusÃüÁî²é¿´
+=====================
+stash
+=====================
+$git stash //±£´æµ±Ç°»·¾³
+$git stash list//²é¿´stashId
+$git stash apply[stashId]//»Ö¸´»·¾³
+$git stash pop[stash]//»Ö¸´»·¾³²¢É¾³ı
