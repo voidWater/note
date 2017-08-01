@@ -41,4 +41,4 @@ branch
 $git branch [-b|-d] {branchName}//创建分支[切换到新分支|删除分支]{分支名}
 $git checkout {branchName}//切换分支
 $git merge {branchName}//合并分支
-
+//conflict:可以用git status命令查看
