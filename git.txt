@@ -38,6 +38,8 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 =====================
 branch
 =====================
-$git branch [-b] {branchName}//创建分支[切换到新分支]{分支名}
+$git branch [-b|-d] {branchName}//创建分支[切换到新分支|删除分支]{分支名}
 $git checkout {branchName}//切换分支
+$git merge {branchName}//合并分支
+
 
