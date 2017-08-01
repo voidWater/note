@@ -34,6 +34,11 @@ $git tag -s {tagName} -m {describe} [version]
 $git reset --hard {version}
 $git reflog
 =====================
+reset
+=====================
+git reset --hard [HEAD^|commitId]//[回到上一个版本|回到指定版本]
+git reflog //查看历史命令
+=====================
 branch
 =====================
 $git branch [-b|-d|-D|--no-ff -m {describe}] {branchName}//创建分支[切换到新分支|删除分支|强制删除|禁用fast forward]{分支名}
