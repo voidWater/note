@@ -59,3 +59,14 @@ $git branch --set-upstream dev origin/dev //将本地branch与远程branch链接
 $git push -u origin master//第一次推送master分支的所有内容
 $git push {origin} {master} //推送{远程repository}{推送的分支}
 $git pull//下拉远程repository
+=====================
+tag
+=====================
+$git tag //查看tag
+$git tag [-a {tagName|-m{describe}}]{tagName}[指定commitId]//创建tag
+$git tag -d {tagName} //删除tag
+$git show {tagName}//查看tag信息
+
+$git push {origin} {tagName|--tags}//向远程repo推送指定tag|将本地tag全部推送
+$git push origin :refs/tags/tagName//从远程repo中删除tag
+
