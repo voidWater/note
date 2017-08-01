@@ -36,8 +36,10 @@ $git reflog
 =====================
 reset
 =====================
-git reset --hard [HEAD^|commitId]//[回到上一个版本|回到指定版本]
-git reflog //查看历史命令
+$git reset --hard [HEAD^|commitId]//[回到上一个版本|回到指定版本]
+$git reflog //查看历史命令
+$git checkout {--fileName}//暂缓区文件代替工作区
+$git reset HEAD {file}//撤销暂缓区修改
 =====================
 branch
 =====================
