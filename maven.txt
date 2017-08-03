@@ -1,0 +1,64 @@
+===================
+setting.xml
+===================
+--代理服务器配置
+<proxies></proxies>
+--本地库配置
+<localRepository>path</localRepository>
+--初始化本地仓库
+mvn archetype:generate -DgroupId=com.yiibai -DartifactId=NumberGenerator -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+===================
+pom.xml
+===================
+设置坐标
+<dependencies>
+	<dependency>
+        <groupId>org.jvnet.localizer</groupId>
+        <artifactId>localizer</artifactId>
+        <version>1.8</version>
+	</dependency>
+</dependencies>
+--设置远程repository
+<repositories>
+	<repository>
+	    <id>java.net</id>
+	    <url>https://maven.java.net/content/repositories/public/</url>
+	</repository>
+</repositories>
+--pom.xml temple
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+   http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.yiibai.project-group</groupId>
+   <artifactId>project</artifactId>
+   <version>1.0</version>
+<project>
+===================
+cmd
+===================
+--定制库
+mvn install:install-file -Dfile=c:\kaptcha-{version}.jar -DgroupId=com.google.code -DartifactId=kaptcha -Dversion={version} -Dpackaging=jar
+mvn install:install-file -Dfile=c:\core-3.1.0.jar -DgroupId=zxing -DartifactId=zxing -Dversion=3.1.0 -Dpackaging=jar
+===================
+创建工作目录
+===================
+mvn archetype:generate -DgroupId=com.yiibai -DartifactId=NumberGenerat or -DarchetypeArtifactId=maven -archetype-quickstart -DinteractiveMode=false.xml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
