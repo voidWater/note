@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+	<description>Õ¾µãÃèÊö</description>
+	<display-name>Õ¾µãÃû</display-name>
+	<!--small-iconÔªËØÓ¦Ö¸ÏòwebÕ¾Ì¨ÖÐÄ³¸öÐ¡Í¼±êµÄÂ·¾¶,´óÐ¡Îª16 X 16 pixel,µ«ÊÇÍ¼ÏóÎÄ¼þ±ØÐëÎªGIF»òJPEG¸ñÊ½,À©Õ¹Ãû±ØÐëÎª:.gif»ò.jpg.-->
+	<!--large-iconÔªËØÓ¦Ö¸ÏòwebÕ¾Ì¨ÖÐÄ³¸ö´óÍ¼±íÂ·¾¶,´óÐ¡Îª32 X 32 pixel,µ«ÊÇÍ¼ÏóÎÄ¼þ±ØÐëÎªGIF»òJPEGµÄ¸ñÊ½,À©Õ¹Ãû±ØÐëÎª; gif»ò.jpg.-->
+	<icon>
+		<small-icon>/image/small.jpg</small-icon>
+		<large-icon>/image/large.jpg</large-icon>
+	</icon>
+	<!--distributable ÔªËØÎª¿Õ±êÇ©,ËüµÄ´æÔÚÓë·ñ¿ÉÒÔÖ¸¶¨Õ¾Ì¨ÊÇ·ñ¿É·Ö²¼Ê½´¦Àí.Èç¹ûweb.xmlÖÐ³öÏÖÕâ¸öÔªËØ,Ôò´ú±íÕ¾Ì¨ÔÚ¿ª·¢Ê±ÒÑ¾­
+		±»Éè¼ÆÎªÄÜÔÚ¶à¸öJSP Container Ö®¼ä·ÖÉ¢Ö´ÐÐ.-->
+	<distributable/>
+	<!--context-param ÔªËØÓÃÀ´Éè¶¨webÕ¾Ì¨µÄ»·¾³²ÎÊý(context),Ëü°üº¬Á½¸ö×ÓÔªËØ:param-nameºÍparam-value.-->
+	<!--´ËËùÉè¶¨µÄ²ÎÊý,ÔÚJSPÍøÒ³ÖÐ¿ÉÒÔÊ¹ÓÃÏÂÁÐ·½·¨À´È¡µÃ:${initParam.param_name}-->
+	<!--ÈôÔÚServlet¿ÉÒÔÊ¹ÓÃÏÂÁÐ·½·¨À´»ñµÃ:String param_name=getServletContext().getInitParamter("param_name");-->
+	<context-param>
+		<param-name>param-name</param-name>
+		<param-value>param-value</param-value>
+	</context-param>
+	<!--filterÔªËØÓÃÀ´ÉùÃ÷filterµÄÏà¹ØÉè¶¨.filterÔªËØ³ýÁËÏÂÃæ½éÉÜµÄµÄ×ÓÔªËØÖ®Íâ,»¹°üÀ¨<servlet>½éÉÜ¹ýµÄ<icon>,<display-name>
+		,<description>,<init-param>,ÆäÓÃÍ¾Ò»Ñù.-->
+	<filter>
+		<filter-name>filterName</filter-name>
+		<filter-class>com.org.XXX</filter-class>
+		<init-param>
+			<param-name></param-name>
+			<param-value></param-value>
+		</init-param>
+	</filter>
+	<!--filter-mapping ÔªËØµÄÁ½¸öÖ÷Òª×ÓÔªËØfilter-nameºÍurl-pattern.ÓÃÀ´¶¨ÒåFilterËù¶ÔÓ¦µÄURL.-->
+	<filter-mapping>
+		<filter-name>filterName</filter-name>
+		<utl-pattern>/</utl-pattern>
+		<servlet-name>ServletµÄÃû³Æ<servlet-name>
+		<dispatcher>REQUEST|INCLUDE|FORWARD|ERROR</disaptcher>
+	</filter-mapping>
+	<!--listenerÔªËØÓÃÀ´¶¨ÒåListener½Ó¿Ú,ËüµÄÖ÷Òª×ÓÔªËØÎª<listener-class>-->
+	<listener>
+		<listener-class>coreservlet.javaworld.CH11.ContenxtListener</listener-class>
+	</listener>
+	<!--session-config°üº¬Ò»¸ö×ÓÔªËØsession-timeout.¶¨ÒåwebÕ¾Ì¨ÖÐµÄsession²ÎÊý-->
+	<session-config>
+	   <session-timeout>20</session-timeout>
+	</session-config>
+	<!--welcome-fileÓÃÀ´Ö¸¶¨Ê×Ò³ÎÄ¼þÃû³Æ.ÎÒÃÇ¿ÉÒÔÓÃ<welcome-file>Ö¸¶¨¼¸¸öÊ×Ò³,¶ø·þÎñÆ÷»áÒÀÕÕÉè¶¨µÄË³ÐòÀ´ÕÒÊ×Ò³.-->
+	<welcome-file-list>
+		<welcome-file></welcome-file>
+		<welcome-file></welcome-file>
+	</welcome-file-list>
+	<!--error-pageÔªËØ°üº¬Èý¸ö×ÓÔªËØerror-code,exception-typeºÍlocation.½«´íÎó´úÂë(Error Code)»òÒì³£(Exception)µÄÖÖÀà¶ÔÓ¦µ½webÕ¾Ì¨×ÊÔ´Â·¾¶.-->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-type>java.lang.Exception</error-code>
+		<location>/exception</location>
+	</error-page>
+	
+	
+	
+	
+	<mima-mapping></mima-mapping>
+	<jsp-config></jsp-config>
+	<resource-ref>
+	   <description>JNDI JDBC DataSource of JSPBook</description>
+	   <res-ref-name>jdbc/sample_db</res-ref-name>
+	   <res-type>javax.sql.DataSoruce</res-type>
+	   <res-auth>Container</res-auth>
+	</resource-ref>
+<web-app>
