@@ -116,6 +116,8 @@ action
 @RequestMapping(value="/path/{id}",method=RequestMethod.get)
 @PathVariable(value="id")
 --通配符
+？单字符
+* 任意数量字符
 --正则表达式
 --所有请求
 @RequestMapping(value="/*", method = {RequestMethod.POST,RequestMethod.GET})
