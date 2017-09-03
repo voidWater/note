@@ -1,16 +1,32 @@
 <!--springMVC-->
-###web.xml设置
+=================
+web.xml设置
+=================
+--应用名
+ <display-name>jycx</display-name>	
+--欢迎界面
+<welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+ </welcome-file-list>
 --添加springMVC配置
 <servlet>
       <servlet-name>servlerName</servlet-name>
       <servlet-class>
          org.springframework.web.servlet.DispatcherServlet
       </servlet-class>
+<<<<<<< HEAD
       <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:springservlet-config.xml</param-value>
         </init-param>
       <load-on-startup>1</load-on-startup><!-- 启动顺序，让这个Servlet随Servletp容器一起启动,load-on-startup必须放在最后 -->
+=======
+	  <init-param><!--设置spring配置文件参数-->
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:app-config.xml</param-value>
+      </init-param>
+      <load-on-startup>1</load-on-startup><!--启动顺序放在最后-->
+>>>>>>> e89c16c573dfab68e3404b50cf5c628de658fe88
 </servlet>
 <servlet-mapping>
   <servlet-name>servlerName</servlet-name>
@@ -26,12 +42,107 @@
       org.springframework.web.context.ContextLoaderListener
    </listener-class>
 </listener>
+--访问静态文件配置
+<servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.html</url-pattern>
+</servlet-mapping>
+--解决请求中文乱码 
+	<filter>
+        <filter-name>encoding</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+=======================
+spring-servlet.xml设置
+=======================
+--解决返回乱码
+	<bean class ="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >        
+        <property name="messageConverters">
+            <list>
+                <!-- 设置返回字符串编码 -->
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name = "supportedMediaTypes">
+                        <list>
+                            <value>text/html;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+                <!-- json转换器 -->
+                <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" >
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/html;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+--静态资源映射
+<mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
+<mvc:default-servlet-handler/><!-- 当上面要访问的静态资源不包括在上面的配置中时，则根据此配置来访问 -->
+--如果当前请求为“/”时，则转发到“/helloworld/index”
+<mvc:view-controller path="/" view-name="forward:/helloworld/index"/>
+--默认的注解映射的支持
+<mvc:annotation-driven/>
+--添加注释扫描,标签将用于激活 Spring MVC 注释扫描功能，该功能允许使用注释，如 @Controller 和 @RequestMapping 等等。
+<context:component-scan base-package="{package-url}" />
 
-###servlerName-servlet.xml设置
---添加注释扫描
-<context:component-scan base-package="package-url" />
-标签将用于激活 Spring MVC 注释扫描功能，该功能允许使用注释，如 @Controller 和 @RequestMapping 等等。
+<context:component-scan base-package="com.demo.web.controllers" use-default-filters="false"> <!-- use-default-filters="false" 只扫描指定的注解 -->
+	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+</context:component-scan>
+--视图解析器
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name="prefix" value="/WEB-INF/jsp/" />
       <property name="suffix" value=".jsp" />
 </bean>
+
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+       <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+       <property name="contentType" value="text/html"/>        
+       <property name="prefix" value="/WEB-INF/views/"/>
+       <property name="suffix" value=".jsp"/>
+</bean>
+==================
+action
+==================
+--对一个action配置多个URL映射
+@RequestMapping(value={"",""},method=RequestMethod.GET)
+--URL请求参数映射
+@RequestMapping(value="/path/{id}",method=RequestMethod.get)
+@PathVariable(value="id")
+--通配符
+？单字符
+* 任意数量字符
+--正则表达式
+--所有请求
+@RequestMapping(value="/*", method = {RequestMethod.POST,RequestMethod.GET})
+--限制请求参数
+@RequestMapping(value="/paramstest", params="example", method = {RequestMethod.GET})
+@RequestMapping(value="/paramstest", params="!example", method = {RequestMethod.GET})
+@RequestMapping(value="/paramstest", params="example=aaa", method = {RequestMethod.GET})
+@RequestMapping(value="/paramstest", params="!example=aaa", method = {RequestMethod.GET})
+--限制action所接受请求头参数
+@RequestMapping(value="/paramstest", headers="example", method = {RequestMethod.GET})
+@RequestMapping(value="/paramstest", headers="!example", method = {RequestMethod.GET})
+@RequestMapping(value="/paramstest", headers="Accept=text/html", method = {RequestMethod.GET})
+@RequestMapping(value="/paramstest", headers="!Accept=text/html", method = {RequestMethod.GET})
+--bind
+@CookieValue(value="JSESSIONID", defaultValue="") String jsessionId
+@RequestHeader(value="User-Agent", defaultValue="") String userAgent
+@ModelAttribute("accountmodel") AccountModel accountModel
+@SessionAttributes(value = "sessionaccountmodel")
+@RequestBody
+@RequestPart

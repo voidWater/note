@@ -1,0 +1,20 @@
+===========
+
+===========
+v-html
+v-moedl
+v-bind
+v-if
+
+===========
+条件判断
+===========
+v-if/v-else-if/v-else:[true|false]根据条件显示元素
+v-show:[true|false]根据条件显示元素
+===========
+循环
+===========
+v-for="(value,key,index)in key"
+===========
+计算属性
+===========
