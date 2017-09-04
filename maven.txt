@@ -1,5 +1,9 @@
 ===================
-setting.xml
+配置
+===================
+maven环境变量配置，配置方式跟jdk有些类似。新建环境变量MAVEN_HOME（值为maven的根目录）、然后在PATH环境变量里加入%MAVEN_HOME%\bin;即可。
+===================
+conf/setting.xml
 ===================
 --代理服务器配置
 <proxies></proxies>
@@ -10,7 +14,7 @@ mvn archetype:generate -DgroupId=com.yiibai -DartifactId=NumberGenerator -Darche
 
 
 ===================
-pom.xml
+pom.xml  中央仓库http://mvnrepository.com/
 ===================
 设置坐标
 <dependencies>
