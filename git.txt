@@ -18,7 +18,7 @@ operation
 =====================
 $git add[.] //添加文件[添加目录下的所有文件]
 $git commit [-m|-am] //提交[提交|添加并提交]
-$git clone {url/path}//克隆
+$git clone {giturl}//克隆
 $git status [-s] //查看文件状态[简约显示]
 $git diff [--cached|HEAD|--stat] //
 尚未缓存的改动：git diff
@@ -29,16 +29,16 @@ $git reset HEAD -- file //取消缓存
 $git rm [--cached] {file}//从缓存和工作区删除[只从缓存删除]
 $git mv {file}//移动和重命名
 $git log [--oneline|--graph|--reverse|--decorate|--author={name}|--before{}|--after{}]
-$git tag -a {tagName} -m {describe} [version]
-$git tag -s {tagName} -m {describe} [version]
 $git reset --hard {version}
 $git reflog
+$git tag -a {tagName} -m {describe} [version]
+$git tag -s {tagName} -m {describe} [version]
 =====================
 reset
 =====================
 $git reset --hard [HEAD^|commitId]//[回到上一个版本|回到指定版本]
 $git reflog //查看历史命令
-$git checkout {--fileName}//暂缓区文件代替工作区
+$git checkout -- {fileName}//暂缓区文件代替工作区
 $git reset HEAD {file}//撤销暂缓区修改
 =====================
 branch
@@ -46,6 +46,7 @@ branch
 $git branch [-b|-d|-D|--no-ff -m {describe}] {branchName}//创建分支[切换到新分支|删除分支|强制删除|禁用fast forward]{分支名}
 $git checkout {branchName}//切换分支
 $git merge {branchName}//合并分支
+$git log --graph --pretty=oneline --abbrev-commit
 //conflict:可以用git status命令查看
 =====================
 stash
@@ -60,7 +61,7 @@ remote
 $git remote [-v]//查看远程repository[详细信息]
 
 $ssh-keygen -t rsa -C "903458283@qq.com" //生成SSH KEY,将公匙添加到github中
-$git remote add {origin} git@github.com:voidWater/note.git//将本地repository与github关联
+$git remote add {origin} git@github.com:voidWater/note.git  //将本地repository与github关联
 $git branch --set-upstream dev origin/dev //将本地branch与远程branch链接
 
 $git push -u origin master//第一次推送master分支的所有内容
