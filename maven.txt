@@ -4,6 +4,143 @@
 maven环境变量配置，配置方式跟jdk有些类似。新建环境变量MAVEN_HOME（值为maven的根目录）、然后在PATH环境变量里加入%MAVEN_HOME%\bin;即可。
 ===================
 conf/setting.xml
+=======
+安装和设置环境变量
+===================
+直接解压然后设置环境变量
+M2_HOME:{maven_path}
+path:%M2_HOME%\bin
+===================
+maven项目的根目录结构
+===================
+src 
+	-main
+		-java
+			-package
+	-test
+		-java
+			-package
+	-resources
+pom.xml
+====================
+compile后生成的target目录结构
+====================
+classes  //字节码文件
+maven-archiver
+maven-status
+surefire-reports //测试报告
+test-classes
+====================
+maven命令
+====================
+cmd进入项目根目录中：
+mvn compile
+mvn test
+mvn package
+mvn clean 
+mvn install
+
+--archetype
+mvn archetype:generate
+mvn archetype:generate -DgroupId={公司网址的反写+项目名} -DartifactId={项目名+模块名} -Dversion={版本号} -Dpackaging={包结构}
+=====================
+坐标 
+=====================
+远程仓库：https://mvnrepository.com/
+本地仓库：<localRepository>F:\software\repository</localRepository>
+镜像仓库：
+=====================
+eclipse http://m2eclipse.sonatype.org/sites/m2e
+=====================
+清理、编译、测试、打包、集成测试、验证、打包
+clean 清理项目
+default 构建项目
+site 生成项目站点
+
+=====================
+pom.xml
+=====================
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId></groupId>
+	<artifactId></artifactId>
+	<!--
+	snapshot快照
+	alpha内部测试
+	beta公测
+	Release稳定
+	GA正式发布
+	-->
+	<version></version>
+	<!--jar war zip pom-->
+	<package></package>
+	<name></name>
+	<description></description>
+	<developers></developers>
+	<licenses></licenses>
+	<organization></organization>
+	
+	
+	<dependencies>
+		<dependency>
+			<groupId></groupId>
+			<artifactId></artifactId>
+			<version></version>
+			<type></type>
+			<!---->
+			<scope>test</scope>
+			<!--设置依赖是否可选-->
+			<optional></optional>
+			<exclusions>
+				<exclusion></exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	
+	<dependencyManagement>
+		<dependencies>
+		<dependency>
+			<groupId></groupId>
+			<artifactId></artifactId>
+			<version></version>
+			<type></type>
+			<scope>test</scope>
+			<!--设置依赖是否可选-->
+			<optional></optional>
+			<exclusions>
+				<exclusion></exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	</dependencyManagement>
+	<build>
+		<finalName>webdemo</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.16.v20140903</version>
+			</plugin>
+		</plugins>
+	</build>
+	<parent></parent>
+	<modules></modules>
+</project>
+
+
+===================
+web
+===================
+<groupId>javax.servlet</groupId>
+<artifactId>javax.servlet-api</artifactId>
+<version>3.0.1</version>
+<scope>provided</scope>
+
+
+
+
+===================
+setting.xml
 ===================
 --代理服务器配置
 <proxies></proxies>
