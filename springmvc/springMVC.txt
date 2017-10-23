@@ -1,5 +1,22 @@
 <!--springMVC-->
 =================
+maven坐标
+=================
+<properties>
+  	<springVersion>4.2.3.RELEASE</springVersion>
+  </properties>
+ </dependency>
+    	 <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-web</artifactId>
+    	<version>${springVersion}</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-webmvc</artifactId>
+    	<version>${springVersion}</version>
+    </dependency>
+=================
 web.xml设置
 =================
 --应用名
@@ -13,20 +30,12 @@ web.xml设置
       <servlet-name>servlerName</servlet-name>
       <servlet-class>
          org.springframework.web.servlet.DispatcherServlet
-      </servlet-class>
-<<<<<<< HEAD
+      </servlet-class
       <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:springservlet-config.xml</param-value>
         </init-param>
       <load-on-startup>1</load-on-startup><!-- 启动顺序，让这个Servlet随Servletp容器一起启动,load-on-startup必须放在最后 -->
-=======
-	  <init-param><!--设置spring配置文件参数-->
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:app-config.xml</param-value>
-      </init-param>
-      <load-on-startup>1</load-on-startup><!--启动顺序放在最后-->
->>>>>>> e89c16c573dfab68e3404b50cf5c628de658fe88
 </servlet>
 <servlet-mapping>
   <servlet-name>servlerName</servlet-name>

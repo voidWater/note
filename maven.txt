@@ -136,6 +136,17 @@ web
 <version>3.0.1</version>
 <scope>provided</scope>
 
+===================
+install jar
+===================
+
+E:\>cd develop\jar\sql
+E:\develop\jar\sql>mvn install:install-file 
+-Dfile=sqljdbc4.jar 
+-Dpackaging=jar
+-DgroupId=com.microsoft.sqlserver 
+-DartifactId=sqljdbc4 
+-Dversion=4.0
 
 
 

@@ -1,0 +1,26 @@
+==========================
+javaScript的||和&&
+==========================
+&&
+如果第一个操作数是 Boolean 类型，而且值为 false ，那么直接返回 false。
+如果第一个操作数是 Boolean 类型，而且值为 true，另外一个操作数是 object 类型，那么将返回这个对象。
+如果两个操作数都是 object 类型，那么，返回第二个对象。
+如果任何一个操作数是 null，那么，返回 null。
+如果任何一个操作数是 NaN，那么返回 NaN。
+如果任何一个操作数是 undefinded，那么返回 undefined。
+||
+如果第一个操作数是 boolean 类型，而且值为 true， 那么，直接返回 true。
+如果第一个操作数是 Boolean 类型，而且值为 false ，第二个操作数为 object，那么返回 object 对象。
+如果两个操作数都是 object 类型，那么返回第一个对象。
+如果两个操作数都是 null，那么，返回 null。
+如果两个操作数都是 NaN，那么返回 NaN。
+如果两个操作数都是 undefined，那么，返回 undefined。
+===========================
+typeOf
+===========================
+typeof 运算符把类型信息当作字符串返回。typeof 返回值有六种可能： "number," "string," "boolean," "object," "function," 和 "undefined."
+例：
+typeOf true 或 typeOf(true)
+===========================
+RegExp正则表达式对象
+===========================

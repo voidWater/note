@@ -1,0 +1,11 @@
+#maven的pom.xml报错，在maven选项中update project
+
+
+#报Cannot change version of project facet Dynamic Web Module to 3.0错误
+解决：
+修改工程.settings目录下的org.eclipse.wst.common.project.facet.core.xml：
+    <installed facet="jst.web" version="3.0"/>
+同时把web.xml开头设置为：
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+然后maven update
