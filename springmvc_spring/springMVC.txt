@@ -30,7 +30,7 @@ web.xml…Ë÷√
       <servlet-name>servlerName</servlet-name>
       <servlet-class>
          org.springframework.web.servlet.DispatcherServlet
-      </servlet-class
+      </servlet-class>
       <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:springservlet-config.xml</param-value>

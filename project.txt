@@ -9,3 +9,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 然后maven update
+
+
+================================
+@EnableAsync annotation metadata was not injected
+解决：
+是包扫描器路径的问题，最好详细点
+在spring的配置文件applicationContext.xml中, 配置包扫描器时, 使用了*, 想扫描所有的包; 而这种方式有可能扫描到spring自带的包
+<!-- 包扫描器 -->  
+<context:component-scan base-package="*"/>  
+改动后(具体指定了要扫描的包):
+
+<!-- 包扫描器 -->  
+<context:component-scan base-package="com.git.*"/>  
