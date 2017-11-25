@@ -34,7 +34,23 @@
     <listener>  
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>  
     </listener>  
-  
+	<!-- Spring MVC 静态文件访问 -->
+    <servlet-mapping>
+    	<servlet-name>default</servlet-name>
+     	<url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+     	<url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>default</servlet-name>
+     	<url-pattern>*.css</url-pattern>
+    </servlet-mapping>
     <!-- Spring MVC servlet -->  
     <servlet>  
         <servlet-name>SpringMVC</servlet-name>  
