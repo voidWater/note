@@ -1,79 +1,81 @@
 =====================
 file
 =====================
-echo 'ÄÚÈİ'>file //Ğ´ÈëÎÄ¼ş
-cat file //²é¿´ÎÄ¼şÄÚÈİ
-pwd //²é¿´µ±Ç°Ä¿Â¼
-touch file//´´½¨ÎÄ¼ş
-ls [-a|-s]//²é¿´ËùÓĞÎÄ¼ş|ÏÔÊ¾ĞÅÏ¢
-mkdir {file}//´´½¨ÎÄ¼ş¼Ğ
+echo 'å†…å®¹'>file //å†™å…¥æ–‡ä»¶
+cat file //æŸ¥çœ‹æ–‡ä»¶å†…å®¹
+pwd //æŸ¥çœ‹å½“å‰ç›®å½•
+touch file//åˆ›å»ºæ–‡ä»¶
+ls [-a|-s]//æŸ¥çœ‹æ‰€æœ‰æ–‡ä»¶|æ˜¾ç¤ºä¿¡æ¯
+mkdir {file}//åˆ›å»ºæ–‡ä»¶å¤¹
 =====================
 init
 =====================
 $ git config --global user.name 'runoob'
 $ git config --global user.email test@runoob.com
-$git init //³õÊ¼»¯
+$git init //åˆå§‹åŒ–
 =====================
 operation
 =====================
-$git add[.] //Ìí¼ÓÎÄ¼ş[Ìí¼ÓÄ¿Â¼ÏÂµÄËùÓĞÎÄ¼ş]
-$git commit [-m|-am] //Ìá½»[Ìá½»|Ìí¼Ó²¢Ìá½»]
-$git status [-s] //²é¿´ÎÄ¼ş×´Ì¬[¼òÔ¼ÏÔÊ¾]
+$git add[.] //æ·»åŠ æ–‡ä»¶[æ·»åŠ ç›®å½•ä¸‹çš„æ‰€æœ‰æ–‡ä»¶]
+$git commit [-m|-am] //æäº¤[æäº¤|æ·»åŠ å¹¶æäº¤]
+$git status [-s] //æŸ¥çœ‹æ–‡ä»¶çŠ¶æ€[ç®€çº¦æ˜¾ç¤º]
 $git log [--oneline|--graph|--reverse|--decorate|--author={name}|--before{}|--after{}]
 $git diff [--cached|HEAD|--stat] //
-ÉĞÎ´»º´æµÄ¸Ä¶¯£ºgit diff
-²é¿´ÒÑ»º´æµÄ¸Ä¶¯£º git diff --cached //²é¿´»º´æÇøºÍ°æ±¾¿âÀïÃæ×îĞÂ°æ±¾µÄÇø±ğ
-²é¿´ÒÑ»º´æµÄÓëÎ´»º´æµÄËùÓĞ¸Ä¶¯£ºgit diff HEAD -- {fileName} //²é¿´¹¤×÷ÇøºÍ°æ±¾¿âÀïÃæ×îĞÂ°æ±¾µÄÇø±ğ
-ÏÔÊ¾ÕªÒª¶ø·ÇÕû¸ö diff£ºgit diff --stat //¼ò»¯ÏÔÊ¾
-$git reset HEAD -- file //È¡Ïû»º´æ
-$git rm [--cached] {file}//´Ó»º´æºÍ¹¤×÷ÇøÉ¾³ı[Ö»´Ó»º´æÉ¾³ı]
-$git mv {file}//ÒÆ¶¯ºÍÖØÃüÃû
+å°šæœªç¼“å­˜çš„æ”¹åŠ¨ï¼šgit diff
+æŸ¥çœ‹å·²ç¼“å­˜çš„æ”¹åŠ¨ï¼š git diff --cached //æŸ¥çœ‹ç¼“å­˜åŒºå’Œç‰ˆæœ¬åº“é‡Œé¢æœ€æ–°ç‰ˆæœ¬çš„åŒºåˆ«
+æŸ¥çœ‹å·²ç¼“å­˜çš„ä¸æœªç¼“å­˜çš„æ‰€æœ‰æ”¹åŠ¨ï¼šgit diff HEAD -- {fileName} //æŸ¥çœ‹å·¥ä½œåŒºå’Œç‰ˆæœ¬åº“é‡Œé¢æœ€æ–°ç‰ˆæœ¬çš„åŒºåˆ«
+æ˜¾ç¤ºæ‘˜è¦è€Œéæ•´ä¸ª diffï¼šgit diff --stat //ç®€åŒ–æ˜¾ç¤º
+$git reset HEAD -- file //å–æ¶ˆç¼“å­˜
+$git rm [--cached] {file}//ä»ç¼“å­˜å’Œå·¥ä½œåŒºåˆ é™¤[åªä»ç¼“å­˜åˆ é™¤]
+$git mv {file}//ç§»åŠ¨å’Œé‡å‘½å
 =====================
 reset
 =====================
-$git reset --hard [HEAD^|HEAD~n|commitId]//[»Øµ½ÉÏÒ»¸ö°æ±¾|»Øµ½Ö¸¶¨°æ±¾]
-$git reflog //²é¿´ÀúÊ·ÃüÁî
-$git checkout -- {fileName}//Ôİ»ºÇøÎÄ¼ş»ò°æ±¾¿â´úÌæ¹¤×÷Çø
-$git reset HEAD {file}//³·ÏúÔİ»ºÇøĞŞ¸Ä
+$git reset --hard [HEAD^|HEAD~n|commitId]//[å›åˆ°ä¸Šä¸€ä¸ªç‰ˆæœ¬|å›åˆ°æŒ‡å®šç‰ˆæœ¬]
+$git reflog //æŸ¥çœ‹å†å²å‘½ä»¤
+$git checkout -- {fileName}//æš‚ç¼“åŒºæ–‡ä»¶æˆ–ç‰ˆæœ¬åº“ä»£æ›¿å·¥ä½œåŒº
+$git reset HEAD {file}//æ’¤é”€æš‚ç¼“åŒºä¿®æ”¹
 =====================
 branch
 =====================
-$git branch [-d|-D|--no-ff -m {describe}] {branchName}//[É¾³ı·ÖÖ§|Ç¿ÖÆÉ¾³ı|½ûÓÃfast forward]{·ÖÖ§Ãû}
-$git checkout {branchName}//ÇĞ»»·ÖÖ§
-$git checkout -b {´´½¨²¢ÇĞ»»µ½ĞÂ·ÖÖ§}//
-$git merge {branchName}//ºÏ²¢·ÖÖ§
+$git branch [-d|-D|--no-ff -m {describe}] {branchName}//[åˆ é™¤åˆ†æ”¯|å¼ºåˆ¶åˆ é™¤|ç¦ç”¨fast forward]{åˆ†æ”¯å}
+$git checkout {branchName}//åˆ‡æ¢åˆ†æ”¯
+$git checkout -b {åˆ›å»ºå¹¶åˆ‡æ¢åˆ°æ–°åˆ†æ”¯}//
+$git merge {branchName}//åˆå¹¶åˆ†æ”¯
 $git log --graph --pretty=oneline --abbrev-commit
-//conflict:¿ÉÒÔÓÃgit statusÃüÁî²é¿´
+//conflict:å¯ä»¥ç”¨git statuså‘½ä»¤æŸ¥çœ‹
 =====================
 stash
 =====================
-$git stash //±£´æµ±Ç°»·¾³
-$git stash list//²é¿´stashId
-$git stash apply[stashId]//»Ö¸´»·¾³
-$git stash drop[stashId]//É¾³ı»·¾³
-$git stash pop[stash]//»Ö¸´»·¾³²¢É¾³ı
+$git stash //ä¿å­˜å½“å‰ç¯å¢ƒ
+$git stash list//æŸ¥çœ‹stashId
+$git stash apply[stashId]//æ¢å¤ç¯å¢ƒ
+$git stash drop[stashId]//åˆ é™¤ç¯å¢ƒ
+$git stash pop[stash]//æ¢å¤ç¯å¢ƒå¹¶åˆ é™¤
 =====================
 tag
 =====================
-$git tag //²é¿´tag
-$git tag -a{tagName} [-m{describe}] [Ö¸¶¨commitId]//´´½¨tag
-$git tag -s {tagName} [-m {describe}] [Ö¸¶¨commitId]//ÒÔGPGË½Ô¿´´½¨tag
-$git tag -d {tagName} //É¾³ıtag
-$git show {tagName}//²é¿´tagĞÅÏ¢
+$git tag //æŸ¥çœ‹tag
+$git tag -a{tagName} [-m{describe}] [æŒ‡å®šcommitId]//åˆ›å»ºtag
+$git tag -s {tagName} [-m {describe}] [æŒ‡å®šcommitId]//ä»¥GPGç§é’¥åˆ›å»ºtag
+$git tag -d {tagName} //åˆ é™¤tag
+$git show {tagName}//æŸ¥çœ‹tagä¿¡æ¯
 
-$git push {origin} {tagName|--tags}//ÏòÔ¶³ÌrepoÍÆËÍÖ¸¶¨tag|½«±¾µØtagÈ«²¿ÍÆËÍ
-$git push origin :refs/tags/tagName//´ÓÔ¶³ÌrepoÖĞÉ¾³ıtag
+$git push {origin} {tagName|--tags}//å‘è¿œç¨‹repoæ¨é€æŒ‡å®štag|å°†æœ¬åœ°tagå…¨éƒ¨æ¨é€
+$git push origin :refs/tags/tagName//ä»è¿œç¨‹repoä¸­åˆ é™¤tag
 =====================
 remote
 =====================
-$git remote [-v]//²é¿´Ô¶³Ìrepository[ÏêÏ¸ĞÅÏ¢]
-$git clone {giturl}//¿ËÂ¡
-$ssh-keygen -t rsa -C "903458283@qq.com" //Éú³ÉSSH KEY,½«¹«³×Ìí¼Óµ½githubÖĞ
-$git remote add {origin} git@github.com:voidWater/note.git  //½«±¾µØrepositoryÓëgithub¹ØÁª
-$git branch --set-upstream dev origin/dev //½«±¾µØbranchÓëÔ¶³ÌbranchÁ´½Ó
+$git remote [-v]//æŸ¥çœ‹è¿œç¨‹repository[è¯¦ç»†ä¿¡æ¯]
+$git clone {giturl}//å…‹éš†
+$ssh-keygen -t rsa -C "903458283@qq.com" //ç”ŸæˆSSH KEY,å°†å…¬åŒ™æ·»åŠ åˆ°githubä¸­
+$git remote add {origin} git@github.com:voidWater/note.git  //å°†æœ¬åœ°repositoryä¸githubå…³è”
+$git branch --set-upstream dev origin/dev //å°†æœ¬åœ°branchä¸è¿œç¨‹branché“¾æ¥
 
-$git push -u origin master//µÚÒ»´ÎÍÆËÍmaster·ÖÖ§µÄËùÓĞÄÚÈİ
-$git push {origin} {master} //ÍÆËÍ{Ô¶³Ìrepository}{ÍÆËÍµÄ·ÖÖ§}
-$git pull//ÏÂÀ­Ô¶³Ìrepository
-
+$git push -u origin master//ç¬¬ä¸€æ¬¡æ¨é€masteråˆ†æ”¯çš„æ‰€æœ‰å†…å®¹
+$git push {origin} {master} //æ¨é€{è¿œç¨‹repository}{æ¨é€çš„åˆ†æ”¯}
+$git pull//ä¸‹æ‹‰è¿œç¨‹repository
+=====================
+test
+=====================
 
